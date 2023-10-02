@@ -91,7 +91,7 @@ span {
 }
 
 a:hover {
-    color: #66FCF1;
+    color: #000000;
 }
 
 hr {
@@ -614,6 +614,19 @@ hr {
 
 .site-color-two, .single-audio-player div.maudio .audio-control .progress-pass, .single-audio-player .single-audio-content .audio-time .live-status, .theme-change .theme-change-box {
     background-color: #ffffff;
+}
+
+.chat-live {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 0.0625rem 1.5625rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    -ms-border-radius: 999px;
+    -o-border-radius: 999px;
+    margin-left: 1.25rem;
 }
 
 .bg-white, .icon-card:hover .icon, .blog-meta .single-meta::after, .single-audio-player div.maudio .audio-control .progress-bar {
