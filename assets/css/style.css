@@ -180,7 +180,7 @@ hr {
 .bg-main, .multi-radio-station-slider .slick-arrow, .previous-show-slider .slick-arrow, .testimonial-slider .slick-arrow,
 .testimonial-slider-two .slick-arrow,
 .testimonial-slider-three .slick-arrow, .rj-sldier .slick-arrow, .rj-item .rj-social-links li a:hover, .popular-show-slider .slick-arrow, .podcast-slider-two .slick-arrow, .podcast-slider .slick-arrow, .social-links li a:hover {
-    background-color: #66FCF1 !important;
+    background-color: #ff0000 !important;
 }
 
 /* background color css end */
@@ -2473,7 +2473,7 @@ label {
 }
 
 .social-links li a:hover {
-    color: #0b1834;
+    color: #ffffff;
 }
 
 .multi-home-footer {
