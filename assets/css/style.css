@@ -105,7 +105,7 @@ hr {
 }
 
 .text-secondary {
-    color: #868e96 !important;
+    color: #ffffff !important;
 }
 
 .text-success {
@@ -142,7 +142,7 @@ hr {
 
 /* background color css start */
 .bg-primary {
-    background-color: #7367f0 !important;
+    background-color: #ff0000 !important;
 }
 
 .bg-secondary {
@@ -6375,5 +6375,11 @@ blockquote::after {
 .dot-shape {
     top: 75px;
     left: 28%;
+}
+
+@media (min-width: 1539px) and (min-height: 964px) {
+    .shoutBoxContainer {
+        display: block !important;
+    }
 }
 /*# sourceMappingURL=style.css.map */
