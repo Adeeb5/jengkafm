@@ -23,10 +23,51 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/f9118d15e4750756.css" />
     <link rel="stylesheet" href="assets/css/9a951558d313d730.css" />
+    <link rel="stylesheet" href="assets/css/9a951558d313d730.css" />
+    <!-- chat -->
+    <style>
+      .shoutBoxContainer {
+        width: 500px !important;
+        height: 100px !important;
+        display: flexbox;
+        flex-direction: row;
+      }
+    </style>
+    <!-- Include the Crisp chat script -->
+    <script type="text/javascript">
+    window.$crisp=[];
+    window.CRISP_WEBSITE_ID="298aed54-3302-4b18-824b-0dc2288ac2ff";
+    (function(){
+      d=document;
+      s=d.createElement("script");
+      s.src="https://client.crisp.chat/l.js";
+      s.async=1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+
+    <!-- Include the default Crisp chat stylesheet -->
+    <link rel="stylesheet" href="top/client.crisp.chat/static/stylesheets/client_default.css?96815b1&_cacheOverride=1696250434822">
+
+    <!-- Add your custom CSS to override the default styles -->
+    <style>
+    /* Increase specificity to override the default rule */
+    .crisp-client .cc-tlyw .cc-kxkl .cc-1hqb, 
+    .crisp-client .cc-tlyw .cc-kxkl .cc-nsge {
+      position: fixed !important;
+      right: 100px !important;
+    }
+
+    /* Add a more specific rule to override it */
+    .cc-nsge {
+      position: fixed !important;
+      right: 100px !important; /* Your custom style */
+    }
+    </style>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/b67d1ef3a1.js" crossorigin="anonymous"></script>
-    <!-- chat -->
     <!-- chat customer -->
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="298aed54-3302-4b18-824b-0dc2288ac2ff";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
   </head>
   <body>
     <div class="preloader">
@@ -146,12 +187,10 @@
                     <p class="audio-time">
                       DJ KAY ZACK HASBULLAH
                       <span class="live-status">Live</span>
-                      <span class="chat-live">
-                        <a href="https://adeeb5.github.io/jengkafm" target="popup" onclick="window.open('http://jengkafm.chatango.com/', 'popup', 'width=600,height=600'); return false;">
-                          Chat with Jengka FM
-                      </a>
+                      <span>
+                          <script src="https://www.shoutbox.com/chat/16816"></script>
                       </span>
-                    </p>
+                  </p>
                   </div>
                   <div class="maudio">
                     <audio
@@ -252,7 +291,7 @@
                 <div class="col-auto">
                   <div class="counter-item style-two">
                     <h3 class="counter-amount" id="online-users-count">50+</h3>
-                    <h4 class="countrer-title">Listener</h4>
+                    <h4 class="countrer-title">LISTENER</h4>
                   </div>
                 </div>
               </div>
@@ -642,70 +681,6 @@
           </div>
         </div>
       </div>
-      <!-- Bottom Line-->
-      <div class="sticky bottom-0 z-50">
-        <div class="h-20 backdrop-grayscale bg-secondary bg-opacity-90 backdrop-filter backdrop-blur-md text-white w-full">
-          <div class="lg:px-4 md:px-4 px-2 justify-between h-full flex-line space-x-2">
-            <div class="flex-1 h-full flex-line overflow-hidden">
-              <div class="flex-none sm:mr-4 mr-2" style="width: 60px; height: 60px;">
-                <div class="flex rounded">
-                  <span>
-                    <!-- Replace with your image or placeholder -->
-                    <img alt="" src="assets/images/favicon.png">
-                  </span>
-                </div>
-              </div>
-              <div class="overflow-hidden">
-                <div class="block text-sm truncate">Loading...</div>
-                <a class="block text-xs text-gray-300 truncate" href="https://zeno.fm/radio/jengka-fm/">Jengka FM</a>
-              </div>
-            </div>
-            <div class="flex-line h-full md:space-x-2 space-x-1">
-              <button class="w-12 h-12 hover:scale-110 transition duration-100 ease-in-out transform active:scale-100">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="mx-auto text-5xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-80 600c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V360c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v304zm224 0c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V360c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v304z"></path>
-                </svg>
-              </button>
-            </div>
-            <div class="flex-1 md:block hidden">
-              <div class="h-full flex-line justify-end lg:space-x-6 md:space-x-2 space-x-0">
-                <div class="sm:flex hidden items-center space-x-2">
-                  <button class="flex-none w-12 h-12 hover:text-white text-gray-300 hover:scale-110 transition duration-100 ease-in-out transform active:scale-100 active:bg-opacity-50 active:bg-secondary rounded-full" aria-label="Mute">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-xl" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    </svg>
-                  </button>
-                  <input class="md:flex hidden cursor-pointer bg-primary" type="range" id="volume" name="volume" min="0" max="100" step="1" style="background-size: 100% 100%;">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <audio id="audioPlayer" src="https://stream.zeno.fm/aazzdcbs2hduv?acu-uid=775366257312&amp;an-uid=5483352296491537060&amp;mm-uid=064063ff-2b7d-4d00-ae4c-4033d7691be5&amp;dot-uid=08ca220450d688e80cdefb64&amp;amb-uid=4497271945678237223&amp;dbm-uid=CAESEPk8NlvdehwqkAkmyVYfTyo&amp;cto-uid=3b9da7af-dbcd-45c7-b59e-92f92a2ed16b-63ff340e-4d59&amp;bsw-uid=8feacfcf-f7ae-41d6-9243-60d18a2e33aa&amp;dyn-uid=6487162567589585126&amp;ttd-uid=2de74e88-0cf1-4d50-a807-d91dafe6e0ca&amp;triton-uid=cookie%3A56b3a81b-6342-4a41-8dc2-c5ed959743e3&amp;adt-uid=cuid_61539c30-cbd7-11ed-bfce-1297b61989fd"></audio>
-      </div>    
-      <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.1.2.min.js"></script>
-      <script>
-          const randomString = () => Math.random().toString(36).slice(2)
-          pubnub = new PubNub({ // Set your PubNub keys here 
-              publishKey: 'pub-c-e7bbac1c-ec62-4514-b0a3-c9e0463c9756',
-              subscribeKey: 'sub-c-8023e997-7486-493b-ab0c-461b310d7b82',
-              uuid: randomString() // Set a random UUID
-          });
-          pubnub.subscribe({ // Subscribe to user presence
-              channels: ["active"],
-              withPresence: true
-          });
-          pubnub.addListener({ // Get new messages.
-              presence: (presenceEvent) => { // Update the number of online members.
-                  if (presenceEvent.occupancy == 0) {
-                      document.getElementById("online-users-count").innerHTML = "1";
-                  } else {
-                      document.getElementById("online-users-count").innerHTML = presenceEvent.occupancy;
-                  }
-              }
-          });
-      </script>
       </body>
     </footer>
     <!-- footer section end -->
@@ -723,5 +698,15 @@
     <script src="assets/js/contact.js"></script>
     <!-- main js -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-62872329-25");
+    </script>
   </body>
 </html>
