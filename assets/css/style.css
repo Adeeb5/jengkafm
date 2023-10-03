@@ -3833,7 +3833,8 @@ label {
 
 .rj-item.style-two {
     padding: 30px;
-    background-color: #28344c;
+    background-color: #ff0000;
+    border-radius: 40px;
 }
 
 .rj-item.style-two .thumb {
@@ -6375,6 +6376,10 @@ blockquote::after {
 .dot-shape {
     top: 75px;
     left: 28%;
+}
+
+.thumb {
+    border-radius: 10px;
 }
 
 @media (min-width: 1539px) and (min-height: 964px) {

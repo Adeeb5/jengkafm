@@ -290,7 +290,7 @@
                 </div>
                 <div class="col-auto">
                   <div class="counter-item style-two">
-                    <h3 class="counter-amount" id="online-users-count">50+</h3>
+                    <h3 class="counter-amount" id="active">50+</h3>
                     <h4 class="countrer-title">LISTENER</h4>
                   </div>
                 </div>
@@ -666,13 +666,13 @@
           <div class="col-md-6">
             <ul class="social-links">
               <li>
-                <a href="#0"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/Jengka.FM/"><i class="fab fa-facebook-f"></i></a>
               </li>
               <li>
                 <a href="#0"><i class="fab fa-instagram"></i></a>
               </li>
               <li>
-                <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCd24ZUbtqQyL_izovhUDfuw/videos?view=0&sort=p"><i class="fab fa-youtube"></i></a>
               </li>
               <li>
                 <a href="#0"><i class="fab fa-twitter"></i></a>
@@ -698,7 +698,29 @@
     <script src="assets/js/contact.js"></script>
     <!-- main js -->
     <script src="assets/js/main.js"></script>
-
+    <!-- Real Time Online-->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.2.js"></script>
+    <script type="text/javascript">
+      var active = document.getElementById('active');
+      function setCurrentlyActiveUsers(numberOfUsers) {
+        active.innerText = numberOfUsers.toString();
+      }
+      setCurrentlyActiveUsers(1);
+      var pubnub = new PubNub({
+          publishKey : 'pub-c-e7bbac1c-ec62-4514-b0a3-c9e0463c9756',
+          subscribeKey : 'sub-c-8023e997-7486-493b-ab0c-461b310d7b82',
+          heartbeatInterval: 30
+      });
+      pubnub.addListener({
+        presence: function(presenceEvent) {
+          setCurrentlyActiveUsers(presenceEvent.occupancy);
+        }
+      });
+      pubnub.subscribe({ 
+        channels: ['myWebPage1'],
+        withPresence: true
+      });
+      </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
