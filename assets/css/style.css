@@ -637,6 +637,19 @@ hr {
     color: #ff0000;
 }
 
+.audioLH {
+    color: #fff;
+    font-weight: bold;
+}
+
+.rj-designation {
+    color: #fff;
+}
+
+#rj-socmed:hover {
+    color: #000;
+}
+
 .text-base-two {
     color: #FF26C2;
 }
@@ -2296,7 +2309,7 @@ label {
     top: 100%;
     left: -15px;
     width: 240px;
-    background-color: #0f2249;
+    background-color: #ffffff;
     padding: 0.625rem 0;
     opacity: 0;
     visibility: hidden;
@@ -6387,4 +6400,261 @@ blockquote::after {
         display: block !important;
     }
 }
+
+/* (A) MATERIAL ICONS */
+.aWrap .svg-inline--fa {
+    color: white !important;
+  }
+  
+  /* (B) WRAPPER */
+  .aWrap {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* allow buttons to wrap into another row on small screens */
+    /* flex-wrap: wrap; */
+    width: 1505px;
+    height: 70px;
+    padding: 10px 30px;
+    margin: 5px 0;
+    border-radius: 10px;
+    background: red;
+    gap: 1rem;
+  }
+  
+  .aWrap,
+  .aWrap * {
+    box-sizing: border-box;
+  }
+  
+  /* (C) PLAY/PAUSE BUTTON */
+  .aPlay {
+    padding: 0;
+    margin: 0;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  /* (D) TIME */
+  .aCron {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0 10px;
+  }
+  
+  /* (E) RANGE SLIDERS */
+  /* (E1) HIDE DEFAULT */
+  .aWrap input[type="range"] {
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    background: 0;
+  }
+  
+  .range,
+  .range-volume {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .range input,
+  .range-volume input {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .range .change-range,
+  .range-volume .change-range {
+    position: absolute;
+    left: 0;
+    top: 50;
+    height: 6px;
+    width: 0px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .range-volume .change-range {
+    height: 10px;
+    width: 0%;
+  }
+  
+  .under-ranger {
+    position: absolute;
+    left: 0;
+    top: 50;
+    height: 6px;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+    border-radius: 10px;
+  }
+  
+  .range-volume .under-ranger {
+    height: 10px;
+  }
+  
+  .aWrap input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+  }
+  
+  /* (E2) CUSTOM SLIDER TRACK */
+  .aWrap input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 6px;
+    border-radius: 10px;
+  }
+  
+  /* (E3) CUSTOM SLIDER BUTTON */
+  .aWrap input[type="range"]::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 0;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+  
+  .aWrap input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 0;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+  
+  /* (F) VOLUME */
+  .aVolIco {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  input.aVolume {
+    width: 100px !important;
+  }
+  
+  .aVolume::-webkit-slider-runnable-track {
+    height: 10px !important;
+  }
+  
+  .aVolume::-webkit-slider-thumb {
+    margin-top: -3px !important;
+  }
+  
+  .aVolume::-moz-range-thumb {
+    margin-top: -3px !important;
+  }
+  
+  .volume-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .boxaudio {
+        width: 80%; /* 80% of the viewport width */
+        margin: 0 auto; /* Center the container */
+        padding: 20px;
+        color: rgb(255, 255, 255);
+  }
+
+  .aWrap {
+        width: 100%; /* 50% of the container's width */
+        background-color: red;
+        padding: 10px;
+  }
+
+  #streamTitleBottom {
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .aPlayIco {
+      margin-left: 0; /* Remove the margin for phones and tablets */
+    }
+  
+    #streamTitleBottom {
+      margin-right: 0; /* Remove the margin for phones and tablets */
+    }
+  }
+
+  div.shoutText:hover {
+    background-color: rgba(255, 0, 0) !important;
+  }
+  
+  .shoutText {
+    color: #fff;
+    font-size: medium !important;
+  }
+
+  .aWrap {
+  /* Add any existing styles for aWrap here */
+  position: relative;
+}
+
+  .aCronCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure it takes up the full height of aWrap */
+    width: 100%; /* Ensure it takes up the full width of aWrap */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .aWrap,
+    .aContent {
+        max-width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        height: 200px; /* Set height to 200px for tablet and phone screens */
+    }
+
+    .range-volume {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .aVolume {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .aVolIco {
+        margin-left: 10px; /* Add some margin to separate it from range-volume */
+    }
+}
+
+@media (min-width: 768px) {
+    /* Apply styles to screens that are at least 768px wide (laptop and PC screens) */
+    .aCron {
+      /* Add your styles here to move the aCron element to the left */
+      /* Example: */
+      margin-left: 20px; /* Adjust this value as needed */
+    }
+  }
+  .shoutServerText {
+    display: none !important;
+  }
+
+  .audiohide {
+    display: none;
+  }
 /*# sourceMappingURL=style.css.map */

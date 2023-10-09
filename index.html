@@ -61,7 +61,7 @@
     /* Add a more specific rule to override it */
     .cc-nsge {
       position: fixed !important;
-      right: 100px !important; /* Your custom style */
+      right: 200px !important;
     }
     </style>
     <!-- font awesome -->
@@ -101,9 +101,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav site-menu m-auto mb-2 mb-lg-0">
-            <li class="menu-item menu-item-has-children">
+            <li class="menu-item">
               <a href="index2.html">Home</a>
-              <button class="menu-item-button" type="button">+</button>
             </li>
             <li class="menu-item">
               <a href="about.html">About Us</a>
@@ -193,12 +192,13 @@
                   </p>
                   </div>
                   <div class="maudio">
-                    <audio
-                      src="https://stream.zeno.fm/aazzdcbs2hduv"
-                      initaudio="false"
-                    ></audio>
+                    <audio controls class="audiohide"> <!-- Added the 'controls' attribute for audio controls -->
+                      <source src="" type="audio/mpeg"> <!-- Replace with the actual audio source -->
+                      Your browser does not support the audio element.
+                    </audio>
                     <div class="audio-control">
-                      <a href="javascript:;" class="play"></a>
+                      <a href="javascript:;" class="play" id="toggleButton"></a>
+                      <span class="audioLH">LISTEN HERE</span>
                       <div class="time-keep">
                         <span class="current-time">00:00</span> /
                         <span class="duration">01:42</span>
@@ -326,16 +326,16 @@
                   <p class="rj-designation">DJ</p>
                   <ul class="rj-social-links">
                     <li>
-                      <a href="https://www.facebook.com/kay.hasbullah"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.facebook.com/kay.hasbullah" id="rj-socmed"><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/kay_zack_hasbullah/"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.instagram.com/kay_zack_hasbullah/" id="rj-socmed"><i class="fab fa-instagram"></i></a>
                     </li>
                     <li>
-                      <a href="https://www.tiktok.com/@kayzack_hasbullah"><i class="fab fa-tiktok"></i></a>
+                      <a href="https://www.tiktok.com/@kayzack_hasbullah" id="rj-socmed"><i class="fab fa-tiktok"></i></a>
                     </li>
                     <li>
-                      <a href="https://my.linkedin.com/in/jengka-fm-344a7a240"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://my.linkedin.com/in/jengka-fm-344a7a240" id="rj-socmed"><i class="fab fa-linkedin-in"></i></a>
                     </li>
                   </ul>
                 </div>
@@ -730,5 +730,224 @@
 
       gtag("config", "UA-62872329-25");
     </script>
+     <!-- (B) AUDIO PLAYERS -->
+     <div class="boxaudio" id="boxaudio" style="visibility: hidden; position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);">
+      <div class="aWrap" data-src="https://stream.zeno.fm/aazzdcbs2hduv">
+        <audio controls class="audiohide"> <!-- Added the 'controls' attribute for audio controls -->
+          <source src="https://stream.zeno.fm/aazzdcbs2hduv" type="audio/mpeg"> <!-- Replace with the actual audio source -->
+          Your browser does not support the audio element.
+        </audio>
+        <button class="aPlay" disabled><span class="aPlayIco"><i class="fa-solid fa-play"></i></span></button>
+        <div class="range">
+          <div class="aSeek"></div><span class="change-range"></span>
+        </div>
+        <div class="aCron">
+          <div class="aCron" bis_skin_checked="1">
+            <span id="streamTitleBottom">Song Title</span>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+              // Select the second "streamTitle" span element by its unique id
+              const streamTitleElementBottom = document.getElementById('streamTitleBottom');
+  
+              // Create an EventSource to listen for SSE messages from the API
+              const eventSource = new EventSource('https://api.zeno.fm/mounts/metadata/subscribe/aazzdcbs2hduv');
+  
+              // Define a callback function to handle SSE messages
+              eventSource.onmessage = function (event) {
+              try {
+              const eventData = JSON.parse(event.data);
+  
+              if (event.type === 'message' && eventData.streamTitle) {
+              const streamTitle = eventData.streamTitle;
+              streamTitleElementBottom.textContent = streamTitle;
+              }
+              } catch (error) {
+              console.error('Error parsing JSON:', error);
+              }
+              };
+              });
+            </script>
+            <script>
+const playButton = document.getElementById('toggleButton');
+const boxaudio = document.getElementById('boxaudio');
+const audioonbox = document.querySelector('.fa-solid.fa-play');
+const audioElement = document.querySelector('.aWrap audio');
+const playButton2 = document.querySelector('.aPlay');
+const audioBox = document.querySelector('.maudio');
+
+playButton.addEventListener('click', () => {
+  if (boxaudio.style.visibility === 'visible') {
+    audioonbox.classList.remove('fa-pause');
+    audioonbox.classList.add('fa-play');
+    boxaudio.style.visibility = 'hidden';
+    audioElement.pause();
+  } else {
+    audioonbox.classList.remove('fa-play');
+    audioonbox.classList.add('fa-pause');
+    boxaudio.style.visibility = 'visible';
+    audioElement.play();
+  }
+});
+
+playButton2.addEventListener('click', () => {
+  if (audioElement.paused) {
+    audioonbox.classList.remove('fa-play');
+    audioonbox.classList.add('fa-pause');
+    audioBox.classList.add('playing');
+    playButton.classList.remove('disabled');
+    playButton.style.pointerEvents = "auto";
+    audioElement.play();
+  } else {
+    audioonbox.classList.add('fa-play');
+    audioonbox.classList.remove('fa-pause');
+    audioBox.classList.remove('playing');
+    playButton.classList.add('disabled');
+    playButton.style.pointerEvents = "none";
+    audioElement.pause();
+  }
+});
+            </script>
+          </div>
+        </div>
+        <div class="volume-container">
+          <span class="aVolIco"><i class="fa-solid fa-volume-up"></i></span>
+          <div class="range-volume">
+            <span class="under-ranger"></span>
+            <input class="aVolume" type="range" min="0" max="1" value="1" step="0.1" disabled><span class="change-range" style="width: 95%;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+<script>
+  // SUPPORT FUNCTION - FORMAT HH:MM:SS
+  var timeString = (secs) => {
+    // HOURS, MINUTES, SECONDS
+    let ss = Math.floor(secs),
+      hh = Math.floor(ss / 3600),
+      mm = Math.floor((ss - hh * 3600) / 60);
+    ss = ss - hh * 3600 - mm * 60;
+
+    // RETURN FORMATTED TIME
+    if (hh > 0) {
+      mm = mm < 10 ? "0" + mm : mm;
+    }
+    ss = ss < 10 ? "0" + ss : ss;
+    return hh > 0 ? `${hh}:${mm}:${ss}` : `${mm}:${ss}`;
+  };
+
+  function setProgress(elTarget) {
+    let divisionNumber = elTarget.getAttribute("max") / 100;
+    let rangeNewWidth = Math.floor(elTarget.value / divisionNumber);
+    if (rangeNewWidth > 95) {
+      elTarget.nextSibling.style.width = "95%";
+    } else {
+      elTarget.nextSibling.style.width = rangeNewWidth + "%";
+    }
+  }
+
+  document.querySelectorAll(".aWrap").forEach((i) => {
+    // AUDIO + HTML SETUP + FLAGS
+    i.audio = i.querySelector("audio");
+    i.audio.src = encodeURI(i.dataset.src);
+    i.aPlay = i.querySelector(".aPlay");
+    i.aPlayIco = i.querySelector(".aPlayIco");
+    i.aSeek = i.querySelector(".aSeek");
+    i.aVolume = i.querySelector(".aVolume");
+    i.aVolIco = i.querySelector(".aVolIco");
+    i.seeking = false; // user is dragging the seek bar
+
+    // SET PLAY/PAUSE ICON
+    i.audio.onplay = () => (i.aPlayIco.innerHTML = '<i class="fa-solid fa-pause"></i>');
+    i.audio.onpause = () => (i.aPlayIco.innerHTML = '<i class="fa-solid fa-play"></i>');
+
+    // TRACK PROGRESS & SEEK TIME
+    // TRACK LOADING
+    i.audio.onloadstart = () => {};
+
+    // ON META LOADED
+    i.audio.onloadedmetadata = () => {
+      // SET SEEK BAR MAX TIME
+      i.aSeek.max = Math.floor(i.audio.duration);
+
+      // USER CHANGE SEEK BAR TIME
+      i.aSeek.oninput = () => (i.seeking = true); // prevents clash with (d2-4)
+      i.aSeek.onchange = () => {
+        i.audio.currentTime = i.aSeek.value;
+        if (!i.audio.paused) {
+          i.audio.play();
+        }
+        i.seeking = false;
+      };
+    };
+
+    // VOLUME
+    i.aVolIco.onclick = () => {
+      i.audio.volume = i.audio.volume == 0 ? 1 : 0;
+      i.aVolume.value = i.audio.volume;
+      i.aVolIco.innerHTML =
+        i.aVolume.value == 0
+          ? '<i class="fa-solid fa-volume-off"></i>'
+          : '<i class="fa-solid fa-volume-up"></i>';
+      if (i.aVolume.value == 0) {
+        i.aVolume.nextSibling.style.width = "0%";
+      } else {
+        i.aVolume.nextSibling.style.width = "95%";
+      }
+    };
+    i.aVolume.onchange = () => {
+      i.audio.volume = i.aVolume.value;
+      i.aVolIco.innerHTML =
+        i.aVolume.value == 0
+          ? '<i class="fa-solid fa-volume-off"></i>'
+          : '<i class="fa-solid fa-volume-up"></i>';
+    };
+
+    // ENABLE/DISABLE CONTROLS
+    i.audio.oncanplaythrough = () => {
+      i.aPlay.disabled = false;
+      i.aVolume.disabled = false;
+      i.aSeek.disabled = false;
+    };
+    i.audio.onwaiting = () => {
+      i.aPlay.disabled = true;
+      i.aVolume.disabled = true;
+      i.aSeek.disabled = true;
+    };
+
+    i.aSeek.addEventListener("input", function () {
+      setProgress(this);
+    });
+
+    i.aVolume.addEventListener("input", function () {
+      setProgress(this);
+    });
+  });
+  </script>
+  <script>
+  function adjustACronPosition() {
+  // Calculate the desired left offset based on the user's screen width
+  const screenWidth = window.innerWidth;
+  let desiredLeftOffset;
+
+  // Adjust the desiredLeftOffset based on your requirements
+  if (screenWidth >= 1366) {
+    // For screens wider or equal to 1500px
+    desiredLeftOffset = -400; // Adjust this value as needed
+  } else {
+    // For screens narrower than 1500px
+    desiredLeftOffset = 100; // Adjust this value as needed
+  }
+
+  // Apply the desired left offset to the .aCron element
+  const aCronElement = document.querySelector('.aCron');
+  aCronElement.style.marginLeft = `${desiredLeftOffset}px`;
+  }
+
+  // Call the function initially to set the position
+  adjustACronPosition();
+
+  // Add an event listener to adjust the position if the window is resized
+  window.addEventListener('resize', adjustACronPosition);
+  </script>
   </body>
 </html>
