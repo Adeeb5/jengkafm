@@ -6435,8 +6435,15 @@ blockquote::after {
   .aCron {
     font-size: 14px;
     color: #ffffff;
-    margin: 0 10px;
+    margin: 0px 10px;
   }
+
+  @media (max-width: 767px) {
+    .aCron {
+        margin-left: 0px !important;
+        margin: 0px !important; /* Set margin-left to 0px for phones */
+    }
+}
   
   /* (E) RANGE SLIDERS */
   /* (E1) HIDE DEFAULT */
