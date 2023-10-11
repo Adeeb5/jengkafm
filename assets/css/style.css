@@ -6395,12 +6395,6 @@ blockquote::after {
     border-radius: 10px;
 }
 
-@media (min-width: 1539px) and (min-height: 964px) {
-    .shoutBoxContainer {
-        display: block !important;
-    }
-}
-
 /* (A) MATERIAL ICONS */
 .aWrap .svg-inline--fa {
     color: white !important;
@@ -6642,6 +6636,10 @@ blockquote::after {
     }
 }
 
+iframe {
+    display: inline !important;
+}
+
 @media (min-width: 768px) {
     /* Apply styles to screens that are at least 768px wide (laptop and PC screens) */
     .aCron {
@@ -6649,9 +6647,6 @@ blockquote::after {
       /* Example: */
       margin-left: 20px; /* Adjust this value as needed */
     }
-  }
-  .shoutServerText {
-    display: none !important;
   }
 
   .audiohide {
