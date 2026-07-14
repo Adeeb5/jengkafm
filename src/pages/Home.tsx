@@ -1,4 +1,4 @@
-import { Play, Pause, Volume2, VolumeX, Users } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
@@ -7,7 +7,7 @@ import { Slider } from "../components/ui/slider";
 import { AnimatedNumber } from "../components/ui/animated-number";
 
 export default function Home() {
-  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute, volume, setVolume, listeners } = useAudio();
+  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute, volume, setVolume } = useAudio();
 
   return (
     <motion.div 
@@ -69,11 +69,6 @@ export default function Home() {
                       <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-100 border border-red-500/30">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse mr-2"></span>
                         LIVE
-                      </div>
-                      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/10 text-neutral-200 border border-white/20">
-                        <Users className="w-3 h-3 mr-1.5 opacity-70" />
-                        <AnimatedNumber value={listeners} />
-                        <span className="ml-1 opacity-70">Pendengar</span>
                       </div>
                     </div>
                   </div>

@@ -18,7 +18,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolumeState] = useState(1);
   const [streamTitle, setStreamTitle] = useState("Loading stream info...");
-  const [listeners, setListeners] = useState(() => Math.floor(Math.random() * (75 - 45 + 1) + 45));
+  const [listeners] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -49,22 +49,12 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       }
     };
 
-    // Simulate listener fluctuation every 10-20 seconds
-    const interval = setInterval(() => {
-      setListeners(prev => {
-        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
-        const next = prev + change;
-        return Math.max(15, Math.min(next, 120)); // Keep it bounded between 15 and 120
-      });
-    }, 15000);
-
     return () => {
       audio.removeEventListener('pause', handlePause);
       audio.removeEventListener('play', handlePlay);
       audio.pause();
       audioRef.current = null;
       eventSource.close();
-      clearInterval(interval);
     };
   }, []);
 
