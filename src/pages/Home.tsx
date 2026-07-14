@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, Users } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -107,9 +106,13 @@ export default function Home() {
                       value={[isMuted ? 0 : volume * 100]}
                       max={100}
                       step={1}
-                      onValueChange={(vals) => setVolume(vals[0] / 100)}
+                      onValueChange={(vals) => {
+                        const v = Array.isArray(vals) ? vals[0] : vals;
+                        setVolume(v as number / 100);
+                      }}
                       className="cursor-pointer"
                     />
+                  </div>
                   </div>
                 </div>
               </CardContent>

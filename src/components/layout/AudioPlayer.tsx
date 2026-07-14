@@ -40,34 +40,38 @@ export default function AudioPlayer() {
             </p>
           </div>
 
-            <div className="flex items-center space-x-2 shrink-0 group relative">
-              <button
-                onClick={toggleMute}
-                className="p-2 text-muted-foreground hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors"
-              >
-                {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-              </button>
-              
-              <div className="w-0 overflow-hidden group-hover:w-20 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 flex items-center pr-2">
-                <Slider
-                  value={[isMuted ? 0 : volume * 100]}
-                  max={100}
-                  step={1}
-                  onValueChange={(vals) => setVolume(vals[0] / 100)}
-                  className="cursor-pointer"
-                />
+            <div className="flex items-center space-x-2 shrink-0">
+              <div className="flex items-center group relative">
+                <button
+                  onClick={toggleMute}
+                  className="p-2 text-muted-foreground hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors"
+                >
+                  {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                </button>
+                
+                <div className="w-0 overflow-hidden group-hover:w-20 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 flex items-center pr-2">
+                  <Slider
+                    value={[isMuted ? 0 : volume * 100]}
+                    max={100}
+                    step={1}
+                    onValueChange={(vals) => {
+                      const v = Array.isArray(vals) ? vals[0] : vals;
+                      setVolume(v / 100);
+                    }}
+                    className="cursor-pointer"
+                  />
+                </div>
               </div>
+              
+              <button
+                onClick={togglePlay}
+                className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95 shadow-md"
+              >
+                {isPlaying ? <Square className="w-4 h-4" /> : <Play className="w-5 h-5 ml-1" />}
+              </button>
             </div>
-            
-            <button
-              onClick={togglePlay}
-              className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95 shadow-md"
-            >
-              {isPlaying ? <Square className="w-4 h-4" /> : <Play className="w-5 h-5 ml-1" />}
-            </button>
           </div>
-        </div>
-      </motion.div>
-    </AnimatePresence>
-  );
-}
+        </motion.div>
+      </AnimatePresence>
+    );
+  }
