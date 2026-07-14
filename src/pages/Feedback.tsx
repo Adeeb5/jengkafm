@@ -5,30 +5,30 @@ export default function Feedback() {
   const feedbacks = [
     {
       id: 1,
-      name: "Ahmad Faizal",
-      role: "Listener",
-      content: "Jengka FM always plays the best hits! DJ Kay Zack Hasbullah made my wedding day unforgettable. Highly recommended!",
+      name: "Khairul Amizan",
+      role: "2 weeks ago",
+      content: "Alhamdulillah terbaek KZ dlm mengacarakan majlis td... terima kasih atas komitmen yg diberikan... Mantap my prenddd 👌👍😊",
       rating: 5,
     },
     {
       id: 2,
-      name: "Siti Nurhaliza",
-      role: "Local Business Owner",
-      content: "I love tuning in every morning. The local news and updates are fantastic for our community.",
+      name: "Farhan Kanopi Rnf",
+      role: "7 years ago",
+      content: "Bos Kay Zack Hasbullah mmang best dj,bersuara emas... Thoorrrbaekkkk",
       rating: 5,
     },
     {
       id: 3,
-      name: "Mohd Ridzuan",
-      role: "Loyal Fan",
-      content: "The audio quality is crystal clear, and the song requests are always handled so well. Keep it up Jengka FM!",
-      rating: 4,
+      name: "Amirul Tarli",
+      role: "5 years ago",
+      content: "Recommended 👍",
+      rating: 5,
     },
     {
       id: 4,
-      name: "Nurul Ain",
-      role: "Listener",
-      content: "My favorite radio station hands down. The DJs are super engaging and always know how to set the mood.",
+      name: "Suli Sulix",
+      role: "8 years ago",
+      content: "good service!! highly recommended!!",
       rating: 5,
     }
   ];
