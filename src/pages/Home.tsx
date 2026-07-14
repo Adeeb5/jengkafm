@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Users } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
 import { useAudio } from "../context/AudioContext";
+import { Slider } from "../components/ui/slider";
+import { AnimatedNumber } from "../components/ui/animated-number";
 
 export default function Home() {
-  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute } = useAudio();
+  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute, volume, setVolume, listeners } = useAudio();
 
   return (
     <motion.div 
@@ -64,20 +66,28 @@ export default function Home() {
                   <div className="text-center space-y-2 w-full overflow-hidden">
                     <h3 className="font-bold text-lg truncate px-2" title={streamTitle}>{streamTitle}</h3>
                     <p className="text-sm text-neutral-300">DJ KAY ZACK HASBULLAH</p>
-                    <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-100 border border-red-500/30">
-                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse mr-2"></span>
-                      LIVE
+                    <div className="flex items-center justify-center space-x-3 mt-1">
+                      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-100 border border-red-500/30">
+                        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse mr-2"></span>
+                        LIVE
+                      </div>
+                      <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/10 text-neutral-200 border border-white/20">
+                        <Users className="w-3 h-3 mr-1.5 opacity-70" />
+                        <AnimatedNumber value={listeners} />
+                        <span className="ml-1 opacity-70">Pendengar</span>
+                      </div>
                     </div>
                   </div>
 
                   
-                  <div className="flex items-center justify-center w-full space-x-4">
-                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                      <Button onClick={toggleMute} size="icon" variant="ghost" className="text-neutral-300 hover:bg-white/10 hover:text-white rounded-full">
-                        {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
-                      </Button>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                  <div className="flex flex-col items-center justify-center w-full space-y-4">
+                    <div className="flex items-center justify-center w-full space-x-4">
+                      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                        <Button onClick={toggleMute} size="icon" variant="ghost" className="text-neutral-300 hover:bg-white/10 hover:text-white rounded-full">
+                          {isMuted || volume === 0 ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                        </Button>
+                      </motion.div>
+                      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                       <Button 
                         size="icon" 
                         className="h-14 w-14 rounded-full bg-primary text-white hover:bg-primary/90 transition-transform shadow-[0_0_15px_rgba(255,0,0,0.4)] border-none flex items-center justify-center"
@@ -90,6 +100,16 @@ export default function Home() {
                         )}
                       </Button>
                     </motion.div>
+                  </div>
+                  <div className="w-full max-w-[200px] flex items-center space-x-3 text-neutral-300">
+                    <Volume2 className="w-4 h-4 shrink-0 opacity-50" />
+                    <Slider
+                      value={[isMuted ? 0 : volume * 100]}
+                      max={100}
+                      step={1}
+                      onValueChange={(vals) => setVolume(vals[0] / 100)}
+                      className="cursor-pointer"
+                    />
                   </div>
                 </div>
               </CardContent>

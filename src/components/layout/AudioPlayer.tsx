@@ -2,9 +2,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Square, Volume2, VolumeX } from 'lucide-react';
 import { useAudio } from '../../context/AudioContext';
 import { useLocation } from 'react-router-dom';
+import { Slider } from '../ui/slider';
 
 export default function AudioPlayer() {
-  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute } = useAudio();
+  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute, volume, setVolume } = useAudio();
   const location = useLocation();
   
   // Optionally, hide the floating player on the Home page since it has its own large player.
@@ -39,13 +40,25 @@ export default function AudioPlayer() {
             </p>
           </div>
 
-          <div className="flex items-center space-x-2 shrink-0">
-            <button
-              onClick={toggleMute}
-              className="p-2 text-muted-foreground hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors"
-            >
-              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-            </button>
+            <div className="flex items-center space-x-2 shrink-0 group relative">
+              <button
+                onClick={toggleMute}
+                className="p-2 text-muted-foreground hover:text-foreground hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full transition-colors"
+              >
+                {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+              </button>
+              
+              <div className="w-0 overflow-hidden group-hover:w-20 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 flex items-center pr-2">
+                <Slider
+                  value={[isMuted ? 0 : volume * 100]}
+                  max={100}
+                  step={1}
+                  onValueChange={(vals) => setVolume(vals[0] / 100)}
+                  className="cursor-pointer"
+                />
+              </div>
+            </div>
+            
             <button
               onClick={togglePlay}
               className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95 shadow-md"

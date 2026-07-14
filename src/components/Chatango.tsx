@@ -24,25 +24,25 @@ export default function Chatango() {
       handle: "jengkafm",
       arch: "js",
       styles: {
-        a: "ffffff", // Main bg: white
+        a: "FFFFFF", // Main bg
         b: 100,
-        c: "000000", // Main text: black
-        d: "f4f4f5", // Header/Footer bg: zinc-100
-        e: "ffffff", // Inner bg: white
-        h: "ffffff", // Message bg: white
-        k: "000000", // Message text: black
-        l: "e11d48", // Link color: red (primary)
-        m: "e11d48", // Button color: red
-        n: "FFFFFF", // Button text: white
+        c: "000000", // Main text
+        d: "F4F4F5", // Header/Footer bg
+        e: "FFFFFF", // Inner bg
+        h: "FFFFFF", // Message bg
+        k: "000000", // Message text
+        l: "E11D48", // Link color
+        m: "E11D48", // Button color
+        n: "FFFFFF", // Button text
         p: "10",
-        q: "e4e4e7", // Border color: zinc-200
-        r: 100, // Border radius for roundness
+        q: "CCCCCC", // Border color
+        r: 100,
         ab: false,
         usricon: 0,
-        sbc: "d4d4d8", // Scrollbar color
+        sbc: "D4D4D8", // Scrollbar color
         surl: 0,
         allowpm: 0,
-        cnrs: "0.85" // Slight transparency for the border/edges
+        cnrs: "0.85"
       }
     });
 

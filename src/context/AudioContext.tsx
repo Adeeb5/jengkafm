@@ -3,9 +3,12 @@ import React, { createContext, useContext, useState, useRef, useEffect } from 'r
 interface AudioContextType {
   isPlaying: boolean;
   isMuted: boolean;
+  volume: number;
   streamTitle: string;
+  listeners: number;
   togglePlay: () => void;
   toggleMute: () => void;
+  setVolume: (volume: number) => void;
 }
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
@@ -13,7 +16,9 @@ const AudioContext = createContext<AudioContextType | undefined>(undefined);
 export function AudioProvider({ children }: { children: React.ReactNode }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [volume, setVolumeState] = useState(1);
   const [streamTitle, setStreamTitle] = useState("Loading stream info...");
+  const [listeners, setListeners] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -37,6 +42,12 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
           setStreamTitle(data.streamTitle);
         } else {
           setStreamTitle("Jengka FM Live");
+        }
+        if (data && typeof data.listeners === 'number') {
+          setListeners(data.listeners);
+        } else if (data && typeof data.peakListeners === 'number') {
+          // Fallback to peakListeners if listeners is not available
+          setListeners(data.peakListeners);
         }
       } catch (e) {
         setStreamTitle("Jengka FM Live");
@@ -67,8 +78,21 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     setIsMuted(!isMuted);
   };
 
+  const setVolume = (newVolume: number) => {
+    if (!audioRef.current) return;
+    audioRef.current.volume = newVolume;
+    setVolumeState(newVolume);
+    if (newVolume > 0 && isMuted) {
+      audioRef.current.muted = false;
+      setIsMuted(false);
+    } else if (newVolume === 0 && !isMuted) {
+      audioRef.current.muted = true;
+      setIsMuted(true);
+    }
+  };
+
   return (
-    <AudioContext.Provider value={{ isPlaying, isMuted, streamTitle, togglePlay, toggleMute }}>
+    <AudioContext.Provider value={{ isPlaying, isMuted, volume, streamTitle, listeners, togglePlay, toggleMute, setVolume }}>
       {children}
     </AudioContext.Provider>
   );
