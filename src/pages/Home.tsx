@@ -1,38 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2 } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
+import { useAudio } from "../context/AudioContext";
+import Chatango from "../components/Chatango";
 
 export default function Home() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [streamTitle, setStreamTitle] = useState("Jengka FM Live");
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    const eventSource = new EventSource("https://api.zeno.fm/mounts/metadata/subscribe/aazzdcbs2hduv");
-    eventSource.onmessage = (event) => {
-      try {
-        const eventData = JSON.parse(event.data);
-        if (event.type === 'message' && eventData.streamTitle) {
-          setStreamTitle(eventData.streamTitle);
-        }
-      } catch (error) {
-        console.error('Error parsing metadata JSON:', error);
-      }
-    };
-    return () => eventSource.close();
-  }, []);
-
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(e => console.error("Playback failed", e));
-    }
-    setIsPlaying(!isPlaying);
-  };
+  const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute } = useAudio();
 
   return (
     <motion.div 
@@ -96,12 +71,11 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <audio ref={audioRef} src="https://stream.zeno.fm/aazzdcbs2hduv" />
                   
                   <div className="flex items-center justify-center w-full space-x-4">
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                      <Button size="icon" variant="ghost" className="text-neutral-300 hover:bg-white/10 hover:text-white rounded-full">
-                        <Volume2 className="h-5 w-5" />
+                      <Button onClick={toggleMute} size="icon" variant="ghost" className="text-neutral-300 hover:bg-white/10 hover:text-white rounded-full">
+                        {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
                       </Button>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -121,6 +95,14 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-8"
+            >
+              <Chatango />
+            </motion.div>
           </motion.div>
         </div>
       </section>

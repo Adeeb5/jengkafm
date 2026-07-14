@@ -9,24 +9,30 @@ import Contact from "./pages/Contact";
 import { ThemeProvider } from "./components/theme-provider";
 import ScrollToTop from "./components/ScrollToTop";
 
+import { AudioProvider } from "./context/AudioContext";
+import AudioPlayer from "./components/layout/AudioPlayer";
+
 function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="jengkafm-theme">
-      <Router>
-        <ScrollToTop />
-        <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
-          <Navbar />
-          <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/feedback" element={<Feedback />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <AudioProvider>
+        <Router>
+          <ScrollToTop />
+          <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300 relative pb-20">
+            <Navbar />
+            <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/feedback" element={<Feedback />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </main>
+            <Footer />
+            <AudioPlayer />
+          </div>
+        </Router>
+      </AudioProvider>
     </ThemeProvider>
   );
 }
