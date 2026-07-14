@@ -1,0 +1,33 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/layout/Navbar";
+import { Footer } from "./components/layout/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Sponsors from "./pages/Sponsors";
+import Contact from "./pages/Contact";
+
+import { ThemeProvider } from "./components/theme-provider";
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <Router>
+        <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
+          <Navbar />
+          <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/sponsors" element={<Sponsors />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+
+export default App;
