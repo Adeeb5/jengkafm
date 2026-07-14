@@ -47,10 +47,10 @@ export function Navbar() {
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           <ModeToggle />
-          <Link to="/feedback" className="hidden sm:block" onClick={closeMenu}>
+          <Link to="/contact" className="hidden sm:block" onClick={closeMenu}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md hover:shadow-[0_0_15px_rgba(255,0,0,0.4)] transition-shadow">
-                Give Feedback
+                Contact
               </Button>
             </motion.div>
           </Link>
@@ -88,9 +88,9 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/feedback" onClick={closeMenu} className="pt-2 sm:hidden">
+              <Link to="/contact" onClick={closeMenu} className="pt-2 sm:hidden">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md">
-                  Give Feedback
+                  Contact
                 </Button>
               </Link>
             </div>
