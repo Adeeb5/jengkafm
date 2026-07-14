@@ -117,10 +117,10 @@ export default function Home() {
       </section>
 
       {/* Music Show Features */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-12 overflow-hidden">
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="space-y-6"
@@ -144,8 +144,8 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="relative rounded-2xl overflow-hidden shadow-2xl group border border-border"
