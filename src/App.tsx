@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import { AudioProvider } from "./context/AudioContext";
 import AudioPlayer from "./components/layout/AudioPlayer";
+import Chatango from "./components/Chatango";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             </main>
             <Footer />
             <AudioPlayer />
+            <Chatango />
           </div>
         </Router>
       </AudioProvider>

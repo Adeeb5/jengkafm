@@ -4,7 +4,6 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
 import { useAudio } from "../context/AudioContext";
-import Chatango from "../components/Chatango";
 
 export default function Home() {
   const { isPlaying, isMuted, streamTitle, togglePlay, toggleMute } = useAudio();
@@ -95,14 +94,6 @@ export default function Home() {
                 </div>
               </CardContent>
             </Card>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-8"
-            >
-              <Chatango />
-            </motion.div>
           </motion.div>
         </div>
       </section>
