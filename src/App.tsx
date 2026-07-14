@@ -12,6 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { AudioProvider } from "./context/AudioContext";
 import AudioPlayer from "./components/layout/AudioPlayer";
 import Chatango from "./components/Chatango";
+import { PwaInstallPrompt } from "./components/ui/pwa-install-prompt";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Footer />
             <AudioPlayer />
             <Chatango />
+            <PwaInstallPrompt />
           </div>
         </Router>
       </AudioProvider>

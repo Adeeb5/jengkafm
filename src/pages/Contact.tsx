@@ -59,7 +59,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Nombor Telefon</h3>
-                  <p className="text-muted-foreground mt-1">+60 13-633 9144</p>
+                  <p className="text-muted-foreground mt-1">+60 14-545 3095</p>
                 </div>
               </div>
 

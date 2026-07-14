@@ -18,9 +18,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'pwa-icon.png'],
       manifest: {
-        name: 'Jengka FM',
-        short_name: 'Jengka FM',
-        description: 'Dengar Jengka FM - Radio Pilihan Anda',
+        name: 'JengkaFM',
+        short_name: 'JengkaFM',
+        description: 'Dengar JengkaFM - Radio Pilihan Anda',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         icons: [
