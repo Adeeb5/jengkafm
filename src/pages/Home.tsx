@@ -133,12 +133,12 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Music Show</div>
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Music & DJ Services</div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight">
-            Listen to Mixed Songs from Malaysia and abroad
+            Premium Jengka DJ Service & Mixed Global Hits
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Discover a captivating and diverse array of music by tuning in to a mesmerizing collection of mixed songs hailing from Malaysia and various international destinations, offering you a truly immersive and culturally rich auditory experience that transcends borders and genres.
+            Discover a captivating array of music by tuning in to our mesmerizing collection of mixed songs hailing from Malaysia and various international destinations. Looking for the best event entertainment? <strong>Jengka DJ Service</strong> by Jengka FM provides top-tier DJ hosting and music curation for weddings, corporate events, and parties throughout the Maran district and beyond, offering a truly immersive auditory experience.
           </p>
           <div className="flex space-x-8 pt-4">
             <motion.div whileHover={{ y: -5 }} className="bg-muted/50 p-6 rounded-2xl border border-border">
