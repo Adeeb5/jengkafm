@@ -24,7 +24,7 @@ export default function Contact() {
     // Construct WhatsApp message
     const waText = `*Mesej Hubungan Baharu*\n\n*Nama:* ${name}\n*E-mel:* ${email}\n*Perkara:* ${subject}\n*Mesej:* ${message}`;
     const encodedText = encodeURIComponent(waText);
-    const phoneNumber = "60136339144";
+    const phoneNumber = "60145453095";
     
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
   };

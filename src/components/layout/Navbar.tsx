@@ -11,6 +11,10 @@ export function Navbar() {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => setIsMobileMenuOpen(false);
+  const handleLogoClick = () => {
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const navLinks = [
     { path: "/", label: "Laman Utama" },
@@ -22,7 +26,7 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
+        <Link to="/" className="flex items-center space-x-2" onClick={handleLogoClick}>
           <motion.img 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
