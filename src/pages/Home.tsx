@@ -54,8 +54,8 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="max-w-xl text-center md:text-left z-10 space-y-6"
           >
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Dengar <br />
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl flex flex-col gap-2 sm:gap-4">
+              <span>Dengar</span>
               <span className="text-primary">Jengka FM</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-neutral-200 font-medium">
