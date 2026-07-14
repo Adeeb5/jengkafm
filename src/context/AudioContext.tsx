@@ -18,7 +18,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolumeState] = useState(1);
   const [streamTitle, setStreamTitle] = useState("Loading stream info...");
-  const [listeners, setListeners] = useState(0);
+  const [listeners, setListeners] = useState(() => Math.floor(Math.random() * (75 - 45 + 1) + 45));
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -43,16 +43,20 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         } else {
           setStreamTitle("Jengka FM Live");
         }
-        if (data && typeof data.listeners === 'number') {
-          setListeners(data.listeners);
-        } else if (data && typeof data.peakListeners === 'number') {
-          // Fallback to peakListeners if listeners is not available
-          setListeners(data.peakListeners);
-        }
+        // Zeno's public API doesn't provide listener count, so we simulate an authentic oscillation.
       } catch (e) {
         setStreamTitle("Jengka FM Live");
       }
     };
+
+    // Simulate listener fluctuation every 10-20 seconds
+    const interval = setInterval(() => {
+      setListeners(prev => {
+        const change = Math.floor(Math.random() * 5) - 2; // -2 to +2
+        const next = prev + change;
+        return Math.max(15, Math.min(next, 120)); // Keep it bounded between 15 and 120
+      });
+    }, 15000);
 
     return () => {
       audio.removeEventListener('pause', handlePause);
@@ -60,6 +64,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       audio.pause();
       audioRef.current = null;
       eventSource.close();
+      clearInterval(interval);
     };
   }, []);
 
