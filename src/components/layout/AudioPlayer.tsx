@@ -49,7 +49,7 @@ export default function AudioPlayer() {
                   {isMuted || volume === 0 ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                 </button>
                 
-                <div className="w-0 overflow-hidden group-hover:w-20 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100 flex items-center pr-2">
+                <div className="w-20 flex items-center pr-2">
                   <Slider
                     value={[isMuted ? 0 : volume * 100]}
                     max={100}

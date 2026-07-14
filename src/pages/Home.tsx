@@ -143,7 +143,7 @@ export default function Home() {
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Kualiti Audio</p>
             </motion.div>
             <motion.div whileHover={{ y: -5 }} className="bg-muted/50 p-6 rounded-2xl border border-border">
-              <p className="text-3xl font-extrabold text-primary">50+</p>
+              <p className="text-3xl font-extrabold text-primary"><AnimatedNumber value={50} />+</p>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Pendengar Aktif</p>
             </motion.div>
           </div>
