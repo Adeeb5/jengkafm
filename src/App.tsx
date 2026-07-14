@@ -7,11 +7,13 @@ import Feedback from "./pages/Feedback";
 import Contact from "./pages/Contact";
 
 import { ThemeProvider } from "./components/theme-provider";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="jengkafm-theme">
       <Router>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">
           <Navbar />
           <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
