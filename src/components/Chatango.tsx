@@ -58,7 +58,7 @@ export default function Chatango() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-20 md:bottom-24 right-4 md:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[350px] h-[500px] max-h-[70vh] bg-card border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-28 md:bottom-32 right-4 md:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[350px] h-[500px] max-h-[70vh] bg-card border border-border rounded-xl shadow-2xl flex flex-col overflow-hidden"
           >
             <div className="flex items-center justify-between p-4 border-b border-border bg-muted/30">
               <div className="flex items-center space-x-2">
@@ -83,7 +83,7 @@ export default function Chatango() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-20 md:bottom-24 right-4 md:right-6 z-40 w-12 h-12 md:w-14 md:h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
+        className="fixed bottom-28 md:bottom-32 right-4 md:right-6 z-40 w-12 h-12 md:w-14 md:h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </motion.button>
