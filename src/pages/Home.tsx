@@ -55,7 +55,8 @@ export default function Home() {
             className="max-w-xl text-center md:text-left z-10 space-y-6"
           >
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Dengarkan <span className="text-primary">Jengka FM</span>
+              Dengar <br />
+              <span className="text-primary">Jengka FM</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-neutral-200 font-medium">
               Melodi Anda, Stesen Anda.
@@ -73,9 +74,9 @@ export default function Home() {
                 <div className="flex flex-col items-center space-y-6">
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
-                    className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/50 shadow-[0_0_15px_rgba(255,0,0,0.3)]"
+                    className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary bg-white shadow-[0_0_15px_rgba(255,0,0,0.5)] flex items-center justify-center"
                   >
-                    <img src="/assets/images/shows/player/2.jpg" alt="Live stream thumbnail" className="w-full h-full object-cover" />
+                    <img src="/assets/images/logo.png" alt="Jengka FM Logo" className="w-full h-full object-contain p-3" />
                     {isPlaying && (
                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                         <div className="flex space-x-1">
