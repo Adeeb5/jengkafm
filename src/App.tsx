@@ -3,7 +3,7 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Sponsors from "./pages/Sponsors";
+import Feedback from "./pages/Feedback";
 import Contact from "./pages/Contact";
 
 import { ThemeProvider } from "./components/theme-provider";
@@ -18,7 +18,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/sponsors" element={<Sponsors />} />
+              <Route path="/feedback" element={<Feedback />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>

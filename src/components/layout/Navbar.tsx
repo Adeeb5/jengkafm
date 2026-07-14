@@ -15,7 +15,7 @@ export function Navbar() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
-    { path: "/sponsors", label: "Sponsors" },
+    { path: "/feedback", label: "Feedback" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -47,10 +47,10 @@ export function Navbar() {
 
         <div className="flex items-center space-x-2 sm:space-x-4">
           <ModeToggle />
-          <Link to="/sponsors" className="hidden sm:block" onClick={closeMenu}>
+          <Link to="/feedback" className="hidden sm:block" onClick={closeMenu}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md hover:shadow-[0_0_15px_rgba(255,0,0,0.4)] transition-shadow">
-                Sponsor Us
+                Give Feedback
               </Button>
             </motion.div>
           </Link>
@@ -88,9 +88,9 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/sponsors" onClick={closeMenu} className="pt-2 sm:hidden">
+              <Link to="/feedback" onClick={closeMenu} className="pt-2 sm:hidden">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md">
-                  Sponsor Us
+                  Give Feedback
                 </Button>
               </Link>
             </div>
