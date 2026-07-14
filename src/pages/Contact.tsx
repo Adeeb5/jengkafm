@@ -69,7 +69,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Email Address</h3>
-                  <p className="text-muted-foreground mt-1">info@jengkafm.com.my</p>
+                  <p className="text-muted-foreground mt-1">Not Available</p>
                 </div>
               </div>
             </CardContent>
@@ -82,11 +82,11 @@ export default function Contact() {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground" htmlFor="name">Your Name</label>
-                <Input id="name" placeholder="John Doe" value={formData.name} onChange={handleChange} required maxLength={50} pattern="[a-zA-Z\s\-']+" title="Only letters, spaces, hyphens, and apostrophes are allowed" className="bg-background/50 border-border" />
+                <Input id="name" placeholder="Khairul Zaffan" value={formData.name} onChange={handleChange} required maxLength={50} pattern="[a-zA-Z\s\-']+" title="Only letters, spaces, hyphens, and apostrophes are allowed" className="bg-background/50 border-border" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground" htmlFor="email">Email Address</label>
-                <Input id="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required maxLength={100} className="bg-background/50 border-border" />
+                <Input id="email" type="email" placeholder="khairul@example.com" value={formData.email} onChange={handleChange} required maxLength={100} className="bg-background/50 border-border" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground" htmlFor="subject">Subject</label>
