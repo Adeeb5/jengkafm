@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="jengkafm-theme">
+    <ThemeProvider defaultTheme="light" storageKey="jengkafm-theme">
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-background text-foreground transition-colors duration-300">

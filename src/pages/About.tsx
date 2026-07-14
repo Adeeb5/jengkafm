@@ -7,8 +7,8 @@ export default function About() {
     <div className="flex flex-col space-y-16 py-8">
       {/* Header Section */}
       <section className="text-center space-y-4 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">About <span className="text-primary">Jengka FM</span></h1>
-        <p className="text-xl text-muted-foreground">The heart of Pahang's radio broadcasting, bringing communities together through melodies.</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Mengenai <span className="text-primary">Jengka FM</span></h1>
+        <p className="text-xl text-muted-foreground">Nadi penyiaran radio Pahang, menyatukan komuniti melalui melodi.</p>
       </section>
 
       {/* History Section */}
@@ -30,16 +30,16 @@ export default function About() {
           />
         </div>
         <div className="space-y-6 relative z-10 md:ml-12 lg:ml-20">
-          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Our Story</div>
-          <h2 className="text-3xl font-bold text-foreground leading-tight">History of Jengka FM</h2>
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Kisah Kami</div>
+          <h2 className="text-3xl font-bold text-foreground leading-tight">Sejarah Jengka FM</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A station located in Pahang, Malaysia. It's specifically based in Jengka, which is a city under the district of Maran. 
+            Sebuah stesen yang terletak di Pahang, Malaysia. Ia berpusat secara khusus di Jengka, iaitu sebuah bandar di bawah daerah Maran. 
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Jengka FM started streaming on Facebook Live, which is a type of video streaming, but currently we've moved to the website. It's cloud audio streaming, which means you just press play and listen to it.
+            Jengka FM bermula dengan penstriman di Facebook Live, iaitu sejenis penstriman video, tetapi kini kami telah berpindah ke laman web. Ia adalah penstriman audio awan, yang bermaksud anda hanya perlu menekan butang main dan terus mendengarnya.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            The DJ for this radio station is <strong className="text-foreground">Kay Zack Hasbullah</strong> - you may contact him on Facebook to be one of your DJs at your wedding.
+            DJ untuk stesen radio ini ialah <strong className="text-foreground">Kay Zack Hasbullah</strong> - anda boleh menghubunginya di Facebook untuk menjemput beliau sebagai salah seorang DJ di majlis perkahwinan anda.
           </p>
         </div>
       </section>
@@ -51,8 +51,8 @@ export default function About() {
             <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 shadow-[0_0_15px_rgba(255,0,0,0.2)]">
               <Radio className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-foreground">Cloud Streaming</h3>
-            <p className="text-muted-foreground">Accessible anywhere, anytime directly from your browser without any installations.</p>
+            <h3 className="text-xl font-bold text-foreground">Penstriman Awan</h3>
+            <p className="text-muted-foreground">Boleh diakses di mana-mana sahaja, pada bila-bila masa terus dari pelayar anda tanpa sebarang pemasangan.</p>
           </CardContent>
         </Card>
         <Card className="bg-card hover:shadow-xl transition-shadow border-border hover:border-primary/50">
@@ -60,8 +60,8 @@ export default function About() {
             <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 shadow-[0_0_15px_rgba(255,0,0,0.2)]">
               <Mic2 className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-foreground">Expert DJs</h3>
-            <p className="text-muted-foreground">Hosted by professional DJs bringing you the best music mixes and entertainment.</p>
+            <h3 className="text-xl font-bold text-foreground">DJ Pakar</h3>
+            <p className="text-muted-foreground">Dihoskan oleh DJ profesional yang membawakan anda campuran muzik dan hiburan terbaik.</p>
           </CardContent>
         </Card>
         <Card className="bg-card hover:shadow-xl transition-shadow border-border hover:border-primary/50">
@@ -69,8 +69,8 @@ export default function About() {
             <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 shadow-[0_0_15px_rgba(255,0,0,0.2)]">
               <Users className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-bold text-foreground">Community</h3>
-            <p className="text-muted-foreground">Connecting listeners across Jengka and beyond through a shared love for music.</p>
+            <h3 className="text-xl font-bold text-foreground">Komuniti</h3>
+            <p className="text-muted-foreground">Menghubungkan pendengar di seluruh Jengka dan seterusnya melalui minat yang sama terhadap muzik.</p>
           </CardContent>
         </Card>
       </section>

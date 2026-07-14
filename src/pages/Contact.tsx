@@ -22,7 +22,7 @@ export default function Contact() {
     const { name, email, subject, message } = formData;
     
     // Construct WhatsApp message
-    const waText = `*New Contact Message*\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n*Message:* ${message}`;
+    const waText = `*Mesej Hubungan Baharu*\n\n*Nama:* ${name}\n*E-mel:* ${email}\n*Perkara:* ${subject}\n*Mesej:* ${message}`;
     const encodedText = encodeURIComponent(waText);
     const phoneNumber = "60136339144";
     
@@ -32,8 +32,8 @@ export default function Contact() {
   return (
     <div className="flex flex-col space-y-16 py-8">
       <section className="text-center space-y-4 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Get In <span className="text-primary">Touch</span></h1>
-        <p className="text-xl text-muted-foreground">Have a question, feedback, or want to become a sponsor? We'd love to hear from you.</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Hubungi <span className="text-primary">Kami</span></h1>
+        <p className="text-xl text-muted-foreground">Ada soalan, maklum balas, atau mahu menjadi penaja? Kami berbesar hati untuk mendengar daripada anda.</p>
       </section>
 
       <div className="grid md:grid-cols-2 gap-12 items-stretch">
@@ -41,15 +41,15 @@ export default function Contact() {
         <div className="h-full">
           <Card className="bg-card border border-border shadow-[0_0_20px_rgba(255,0,0,0.1)] rounded-2xl overflow-hidden h-full">
             <CardContent className="p-8 space-y-8">
-              <h2 className="text-2xl font-bold text-foreground">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-foreground">Maklumat Hubungan</h2>
               
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-foreground">Our Location</h3>
-                  <p className="text-muted-foreground mt-1">Jengka, Maran District<br />Pahang, Malaysia</p>
+                  <h3 className="font-semibold text-lg text-foreground">Lokasi Kami</h3>
+                  <p className="text-muted-foreground mt-1">Jengka, Daerah Maran<br />Pahang, Malaysia</p>
                 </div>
               </div>
 
@@ -58,7 +58,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-foreground">Phone Number</h3>
+                  <h3 className="font-semibold text-lg text-foreground">Nombor Telefon</h3>
                   <p className="text-muted-foreground mt-1">+60 13-633 9144</p>
                 </div>
               </div>
@@ -68,8 +68,8 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-foreground">Email Address</h3>
-                  <p className="text-muted-foreground mt-1">Not Available</p>
+                  <h3 className="font-semibold text-lg text-foreground">Alamat E-mel</h3>
+                  <p className="text-muted-foreground mt-1">Tidak Tersedia</p>
                 </div>
               </div>
             </CardContent>
@@ -81,19 +81,19 @@ export default function Contact() {
           <CardContent className="p-8 h-full">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground" htmlFor="name">Your Name</label>
-                <Input id="name" placeholder="Khairul Zaffan" value={formData.name} onChange={handleChange} required maxLength={50} pattern="[a-zA-Z\s\-']+" title="Only letters, spaces, hyphens, and apostrophes are allowed" className="bg-background/50 border-border" />
+                <label className="text-sm font-semibold text-foreground" htmlFor="name">Nama Anda</label>
+                <Input id="name" placeholder="Khairul Zaffan" value={formData.name} onChange={handleChange} required maxLength={50} pattern="[a-zA-Z\s\-']+" title="Hanya huruf, ruang, sempang, dan koma atas dibenarkan" className="bg-background/50 border-border" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground" htmlFor="email">Email Address</label>
+                <label className="text-sm font-semibold text-foreground" htmlFor="email">Alamat E-mel</label>
                 <Input id="email" type="email" placeholder="khairul@example.com" value={formData.email} onChange={handleChange} required maxLength={100} className="bg-background/50 border-border" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground" htmlFor="subject">Subject</label>
-                <Input id="subject" placeholder="How can we help you?" value={formData.subject} onChange={handleChange} required maxLength={100} className="bg-background/50 border-border" />
+                <label className="text-sm font-semibold text-foreground" htmlFor="subject">Perkara</label>
+                <Input id="subject" placeholder="Bagaimana kami boleh membantu anda?" value={formData.subject} onChange={handleChange} required maxLength={100} className="bg-background/50 border-border" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground" htmlFor="message">Message</label>
+                <label className="text-sm font-semibold text-foreground" htmlFor="message">Mesej</label>
                 <textarea 
                   id="message" 
                   value={formData.message}
@@ -101,11 +101,11 @@ export default function Contact() {
                   required
                   maxLength={1000}
                   className="flex min-h-[120px] w-full rounded-md border border-border bg-background/50 px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50 text-foreground" 
-                  placeholder="Your message here..."
+                  placeholder="Mesej anda di sini..."
                 ></textarea>
               </div>
               <Button type="submit" className="w-full h-12 text-lg group bg-primary hover:bg-primary/90 text-primary-foreground">
-                Send via WhatsApp
+                Hantar melalui WhatsApp
                 <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>

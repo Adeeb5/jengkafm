@@ -55,10 +55,10 @@ export default function Home() {
             className="max-w-xl text-center md:text-left z-10 space-y-6"
           >
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Listen <span className="text-primary">Jengka FM</span>
+              Dengarkan <span className="text-primary">Jengka FM</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-neutral-200 font-medium">
-              Your Melodies, Your Station.
+              Melodi Anda, Stesen Anda.
             </p>
           </motion.div>
           
@@ -133,21 +133,21 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Music & DJ Services</div>
+          <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-semibold tracking-wide uppercase">Perkhidmatan Muzik & DJ</div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground leading-tight">
-            Premium Jengka DJ Service & Mixed Global Hits
+            Perkhidmatan DJ Jengka Premium & Campuran Lagu Hit Global
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Discover a captivating array of music by tuning in to our mesmerizing collection of mixed songs hailing from Malaysia and various international destinations. Looking for the best event entertainment? <strong>Jengka DJ Service</strong> by Jengka FM provides top-tier DJ hosting and music curation for weddings, corporate events, and parties throughout the Maran district and beyond, offering a truly immersive auditory experience.
+            Temui pelbagai pilihan muzik yang menawan dengan mendengarkan koleksi lagu campuran kami yang menarik dari Malaysia dan pelbagai destinasi antarabangsa. Mencari hiburan acara terbaik? <strong>Perkhidmatan DJ Jengka</strong> oleh Jengka FM menyediakan pengacaraan DJ dan kurasi muzik bertaraf tinggi untuk perkahwinan, acara korporat, dan parti di seluruh daerah Maran dan sekitarnya, menawarkan pengalaman pendengaran yang sungguh mengasyikkan.
           </p>
           <div className="flex space-x-8 pt-4">
             <motion.div whileHover={{ y: -5 }} className="bg-muted/50 p-6 rounded-2xl border border-border">
               <p className="text-3xl font-extrabold text-primary">128 KBPS</p>
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Audio Quality</p>
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Kualiti Audio</p>
             </motion.div>
             <motion.div whileHover={{ y: -5 }} className="bg-muted/50 p-6 rounded-2xl border border-border">
               <p className="text-3xl font-extrabold text-primary">50+</p>
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Active Listeners</p>
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mt-1">Pendengar Aktif</p>
             </motion.div>
           </div>
         </motion.div>
@@ -165,8 +165,8 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end">
              <div className="p-8">
-               <h3 className="text-white text-xl font-bold">Premium Experience</h3>
-               <p className="text-neutral-300 mt-2">Crystal clear streaming globally</p>
+               <h3 className="text-white text-xl font-bold">Pengalaman Premium</h3>
+               <p className="text-neutral-300 mt-2">Penstriman jelas ke seluruh dunia</p>
              </div>
           </div>
         </motion.div>

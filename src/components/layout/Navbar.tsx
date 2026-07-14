@@ -13,10 +13,10 @@ export function Navbar() {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About Us" },
-    { path: "/feedback", label: "Feedback" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: "Laman Utama" },
+    { path: "/about", label: "Mengenai Kami" },
+    { path: "/feedback", label: "Maklum Balas" },
+    { path: "/contact", label: "Hubungi Kami" },
   ];
 
   return (
@@ -50,7 +50,7 @@ export function Navbar() {
           <Link to="/contact" className="hidden sm:block" onClick={closeMenu}>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md hover:shadow-[0_0_15px_rgba(255,0,0,0.4)] transition-shadow">
-                Contact
+                Hubungi Kami
               </Button>
             </motion.div>
           </Link>
@@ -90,7 +90,7 @@ export function Navbar() {
               ))}
               <Link to="/contact" onClick={closeMenu} className="pt-2 sm:hidden">
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md">
-                  Contact
+                  Hubungi Kami
                 </Button>
               </Link>
             </div>

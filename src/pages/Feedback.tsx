@@ -6,28 +6,28 @@ export default function Feedback() {
     {
       id: 1,
       name: "Khairul Amizan",
-      role: "2 weeks ago",
+      role: "2 minggu lalu",
       content: "Alhamdulillah terbaek KZ dlm mengacarakan majlis td... terima kasih atas komitmen yg diberikan... Mantap my prenddd 👌👍😊",
       rating: 5,
     },
     {
       id: 2,
       name: "Farhan Kanopi Rnf",
-      role: "7 years ago",
+      role: "7 tahun lalu",
       content: "Bos Kay Zack Hasbullah mmang best dj,bersuara emas... Thoorrrbaekkkk",
       rating: 5,
     },
     {
       id: 3,
       name: "Amirul Tarli",
-      role: "5 years ago",
+      role: "5 tahun lalu",
       content: "Recommended 👍",
       rating: 5,
     },
     {
       id: 4,
       name: "Suli Sulix",
-      role: "8 years ago",
+      role: "8 tahun lalu",
       content: "good service!! highly recommended!!",
       rating: 5,
     }
@@ -41,9 +41,9 @@ export default function Feedback() {
         transition={{ duration: 0.5 }}
         className="text-center space-y-4"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Listener <span className="text-primary">Feedback</span></h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Maklum Balas <span className="text-primary">Pendengar</span></h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Hear what our amazing listeners have to say about Jengka FM!
+          Dengarkan apa yang pendengar hebat kami katakan tentang Jengka FM!
         </p>
       </motion.div>
 
